@@ -16,6 +16,7 @@ const extractUserFromToken = async (req, res, next) => {
   const token = req.cookies.token;
   if (!token) next();
   if (token) {
+    console.log(token)
     try {
       const decodedToken = jwt.verify(token, secret);
       const userId = await User.findById(decodedToken.sub);
