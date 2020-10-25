@@ -1,0 +1,26 @@
+.containerRegister {
+  width: 50%;
+  min-height: 64vh;
+  margin: 16vh auto;
+  border: 2px solid blueviolet;
+  text-align: center;
+}
+
+.containerRegister h1 {
+  margin: 1em 0;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerForm__email,
+.registerForm__password,
+.registerForm__avatar {
+  width: 50%;
+  margin: 2em;
+  height: 3em;
+}

@@ -1,0 +1,84 @@
+:root {
+	--color-greybackground: #fcf6f6;
+}
+
+.containerRight {
+	--color-grey: rgb(242, 236, 236);
+}
+
+/* .rightSearchBar {
+  margin: 0.3em 0;
+}
+
+.rightSearchBar input {
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  height: 3em;
+  padding-left: 2em;
+  background-color: var(--color-greybackground);
+  margin-bottom: 1em;
+} */
+
+.rightTitle {
+	width: 100%;
+	font-size: 1em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 0.3px solid rgb(202, 198, 198);
+	padding: 0 0.5em;
+	height: 4em;
+}
+
+.rightTitle img {
+	width: 10px;
+	height: 10px;
+}
+
+.rightContent {
+	height: 90vh;
+	overflow-y: auto;
+	padding-bottom: 2em;
+}
+
+.rightContent button {
+	background-color: red;
+	color: aliceblue;
+	width: 5em;
+	height: 2em;
+	border: none;
+	box-shadow: 0px 1px 4px purple;
+	margin-top: 1em;
+	font-weight: bold;
+}
+
+.myFakeTweets {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 1em;
+	align-items: center;
+	max-width: 80%;
+	overflow: auto;
+	margin: auto;
+	color: #424350;
+}
+
+.myFakeTweets__content {
+	overflow-x: auto;
+}
+
+.myFakeTweets__content::before,
+.myFakeTweets__content::after {
+	content: '"';
+	font-size: 0.9em;
+}
+
+.myFakeTweets__date {
+	font-weight: bold;
+	font-size: 0.7em;
+}
+
+@media only screen and (max-width: 1047px) {
+}

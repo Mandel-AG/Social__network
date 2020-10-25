@@ -1,0 +1,19 @@
+.headerContainer {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+.headerPictures {
+	height: 40vh;
+	width: 100%;
+	background-image: url("https://source.unsplash.com/random/1375x260");
+	/* background-image: url("https://source.unsplash.com/random/854x378"); */
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 700px) {
+	.headerPictures {
+		background-image: url("https://source.unsplash.com/random/530x340");
+	}
+}

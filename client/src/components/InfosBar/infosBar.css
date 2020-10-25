@@ -1,0 +1,42 @@
+.infosBar__container {
+	height: 100%;
+	display: flex;
+}
+
+.infos__nbOfUsers {
+}
+
+.infos__nbOfPosts {
+}
+
+.InfosBar__content {
+	min-width: 10em;
+	height: 100%;
+	color: whitesmoke;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+}
+
+.InfosBar__content span {
+	color: white;
+}
+
+.InfosBar__content p {
+	color: rgb(66, 67, 80);
+	border-bottom: 3px solid white;
+}
+
+@media only screen and (max-width: 700px) {
+	.InfosBar__content {
+		min-width: 7.6em;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.InfosBar__content {
+		min-width: 6em;
+	}
+}

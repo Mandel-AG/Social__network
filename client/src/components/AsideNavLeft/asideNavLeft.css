@@ -1,0 +1,82 @@
+.containerLeft {
+	width: 100%;
+}
+
+.containerLeftLogo {
+	display: flex;
+	justify-content: center;
+	color: whitesmoke;
+}
+
+.containerLeftLogo h3 {
+	font-size: 2em;
+}
+
+.selectedLink {
+	color: lightseagreen;
+}
+
+.containerLeft ul {
+	list-style: none;
+	padding-left: 5em;
+}
+
+.containerLeft li {
+	margin: 3em 0;
+}
+
+.containerLeft a {
+	text-decoration: none;
+	color: whitesmoke;
+	font-weight: bold;
+}
+
+.containerLeft a:hover {
+	color: lightseagreen;
+}
+
+.buttonTweeter {
+	background-color: transparent;
+	color: white;
+	height: 4em;
+	margin: 0 4em;
+	border: none;
+	font-weight: bold;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.buttonTweeter:hover {
+	background-color: lightseagreen;
+
+	transform: scale(1.1);
+	transition: all ease-in-out 0.2s;
+}
+
+.leftButton--logout {
+	margin-top: 3em;
+}
+
+@media only screen and (max-width: 1074px) {
+	.containerLeft {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.containerLeftLogo,
+	.containerLeft ul {
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	.containerLeftLogo img {
+		height: 10.7em;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	.containerLeftLogo img {
+		height: 6.7em;
+	}
+}

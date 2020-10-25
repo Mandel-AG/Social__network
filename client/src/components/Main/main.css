@@ -1,0 +1,121 @@
+.containterMain {
+	--main-header-below-height: 7em;
+	--color-greybackground: #fcf6f6;
+	--color-grey: rgb(242, 236, 236);
+	border-left: 3px solid rgb(242, 236, 236);
+	border-right: 3px solid rgb(242, 236, 236);
+	height: 100vh;
+}
+
+.mainHeader {
+	display: flex;
+	height: 8em;
+}
+
+.mainform {
+	height: 100%;
+	width: 80%;
+}
+
+.mainform input {
+	border: none;
+	width: 100%;
+	height: 10em;
+	padding-left: 0.5em;
+}
+
+.mainform img {
+	width: 1em;
+	/* height: calc(var(--main-header-below-height) - 4.4em; */
+	height: 1em;
+	margin: 0.4em;
+	align-self: center;
+}
+
+.mainButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+}
+
+.buttonTweeterMain {
+	color: white;
+	width: 75%;
+	height: 2.3em;
+	border-radius: 30px;
+	border: none;
+	font-weight: bold;
+	font-size: 1em;
+	background-color: lightseagreen;
+}
+
+.mainContent {
+	border: 1px solid var(--color-grey);
+	background-color: white;
+	height: 82vh;
+	overflow-y: auto;
+	width: 85%;
+	margin: auto;
+}
+
+.containerEachUser {
+	display: grid;
+	grid-template-columns: 6em auto;
+	grid-template-rows: 2em 3em 1fr;
+	gap: 2px;
+	margin-bottom: 0.2em;
+	padding: 0.5em;
+}
+
+.eachUseravatar {
+	grid-column: 1/2;
+	grid-row: 1/4;
+}
+
+.eachUseravatar img {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+.eachUserPseudo {
+	display: flex;
+	font-size: 1.1em;
+	color: lightseagreen;
+	padding-left: 0.3em;
+}
+
+.eachUserPost {
+	font-size: 0.8em;
+	padding-left: 0.3em;
+}
+
+.eachUserPostTool {
+	padding-left: 0.3em;
+	font-size: 0.6em;
+}
+
+@media only screen and (max-width: 1074px) {
+	.mainHeader {
+		height: 20vh;
+	}
+
+	.mainContent {
+		height: 79vh;
+	}
+
+	.mainform input {
+		height: 20vh;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	.mainHeader {
+		height: 27vh;
+	}
+	.buttonTweeterMain {
+		width: 100%;
+		height: 3.3em;
+	}
+}
