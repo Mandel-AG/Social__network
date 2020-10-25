@@ -9,7 +9,7 @@ import axios from "axios";
 function Login() {
   const { register, handleSubmit, watch, errors } = useForm();
   const [errorMessage, setErrorMessage] = useState('');
-  const [cookies, setCookie] = useCookies([""]);
+  // const [cookies, setCookie] = useCookies([""]);
 
   const onSubmit = (data) => {
     axios
@@ -20,7 +20,7 @@ function Login() {
       )
       .then((req) => {
         if(req.status === 200 && !req.data.error){
-          setCookie('token',req.data.token, {path:'/'})
+          // setCookie('token',req.data.token, {path:'/'})
           window.location='/home';
         }
         if(req.data.error) setErrorMessage(req.data.error)
