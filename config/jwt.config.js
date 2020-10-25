@@ -1,5 +1,4 @@
-// const secret = process.env.SECRET_TOKEN;
-const secret = 'dddd032b-16b1-4647-a5d7-5b7e69b41763';
+const secret = process.env.SECRET_TOKEN;
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 const { app } = require("../index");
@@ -16,7 +15,11 @@ const extractUserFromToken = async (req, res, next) => {
   const token = req.cookies.token;
   if (!token) next();
   if (token) {
-    console.log(token)
+    console.log('token',token)
+    console.log('cookie',req.cookies)
+    console.log('cookie token',req.cookies.token)
+    console.log('test req.cookie',req.cookie)
+
     try {
       const decodedToken = jwt.verify(token, secret);
       const userId = await User.findById(decodedToken.sub);
