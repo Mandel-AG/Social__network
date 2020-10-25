@@ -1,4 +1,5 @@
-const secret = process.env.SECRET_TOKEN;
+// const secret = process.env.SECRET_TOKEN;
+const secret = 'dddd032b-16b1-4647-a5d7-5b7e69b41763';
 const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 const { app } = require("../index");
