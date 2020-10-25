@@ -21,7 +21,7 @@
     "react-scripts": "3.4.3",
     "serve": "^11.3.2"
   },
-  "proxy":"http://localhost:5000",
+  "proxy":"http://localhost:5300",
     "scripts": {
     "start": "serve -s build",
     "build": "react-scripts build",
