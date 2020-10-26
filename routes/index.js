@@ -22,12 +22,12 @@ const url =
   
   const upload = multer({ storage });
   
-  app.use("/api", apiRoute)
-  app.use("/user", ensureAuthentification, userRoute)
-  app.use("/posts", ensureAuthentification, postsRoute)
   app.use('/',(req, res) => {
     res.sendFile(path.join(__dirname,'../client/build/index.html'))
   });
+  app.use("/api", apiRoute)
+  app.use("/user", ensureAuthentification, userRoute)
+  app.use("/posts", ensureAuthentification, postsRoute)
   
 app.post("/register", upload.single("file"), async (req, res, next) => {
 
