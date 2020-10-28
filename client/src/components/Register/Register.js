@@ -2,10 +2,12 @@ import React, {useState} from "react"
 import { useForm } from "react-hook-form"
 import "./register.css"
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import axios from "axios"
 
 function Register() {
   const { register, handleSubmit, watch, errors } = useForm()
+  let history = useHistory();
   const [errorMessage, setErrorMessage] = useState('');
   const onSubmit = (data) => {
     const formData = new FormData();
@@ -21,7 +23,7 @@ function Register() {
         { withCredentials: true }
       )
       .then((req) => {
-       if(req.status === 200 && !req.data.error) window.location = "/home"
+       if(req.status === 200 && !req.data.error) history.push("/home")
        if(req.data.error) setErrorMessage(req.data.error)
       })
     }

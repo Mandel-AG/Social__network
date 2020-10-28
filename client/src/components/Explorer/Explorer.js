@@ -15,21 +15,21 @@ function Explorer() {
     getPosts();
   }, []);
 
-  // const eachPost = posts.map((element) => (
-  //   <div key={element._id} className='containerEachUser'>
-  //     <div className='eachUseravatar'>
-  //       <img src={`/api/avatar/${element.userId.avatar}`} alt='utilisateur' />
-  //     </div>
+  const eachPost = posts.map((element) => (
+    <div key={element._id} className='containerEachUser'>
+      <div className='eachUseravatar'>
+        <img src={`/api/avatar/${element.userId.avatar}`} alt='utilisateur' />
+      </div>
 
-  //     <div className='eachUserPseudo'>{element.userId.username}</div>
+      <div className='eachUserPseudo'>{element.userId.username}</div>
 
-  //     <div className='eachUserPost'>{element.content}</div>
+      <div className='eachUserPost'>{element.content}</div>
 
-  //     <div className='eachUserPostTool'>
-  //       Posté le {element.date} à {element.hours} .
-  //     </div>
-  //   </div>
-  // ));
+      <div className='eachUserPostTool'>
+        Posté le {element.date} à {element.hours} .
+      </div>
+    </div>
+  ));
 
   return (
     <div className='container__Explorer'>
@@ -60,7 +60,7 @@ function Explorer() {
           <h2>Les derniers posts</h2>
         </div>
 
-        {/* {eachPost} */}
+        {eachPost}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ exports.getPosts = async (req, res, next) => {
     res.json(posts);
     // res.send(posts);
   } catch (error) {
-    console.log("error getting posts", error);
+    next()
   }
 };
 

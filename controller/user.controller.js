@@ -6,7 +6,7 @@ exports.getUsers = async (req, res) => {
     const users = await User.find()
     res.send(users)
   } catch (error) {
-    console.log(error)
+    next(error)
   }
 }
 

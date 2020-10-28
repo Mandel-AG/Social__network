@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(
+  .connect( process.env.MONGODB_URI ||
     "mongodb+srv://badel:badel@cluster0.f8esg.mongodb.net/fakeTwitter?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
@@ -13,7 +13,7 @@ mongoose
 
 
 
-  module.exports = mongoose.createConnection(
+  module.exports = mongoose.createConnection( process.env.MONGODB_URI ||
     "mongodb+srv://badel:badel@cluster0.f8esg.mongodb.net/fakeTwitter?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
@@ -21,5 +21,3 @@ mongoose
     }
   )
 
-
-  // module.exports = async () => await mongoose.createConnection('mongodb+srv://badel:badel@cluster0.f8esg.mongodb.net/fakeTwitter?retryWrites=true&w=majority', {useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true});

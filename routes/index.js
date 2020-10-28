@@ -22,17 +22,14 @@ const url =
   
   const upload = multer({ storage });
   
-  app.use('/',(req, res) => {
-    res.sendFile(path.join(__dirname,'../client/build/index.html'))
-  });
+  // app.use('/',(req, res) => {
+  //   res.sendFile(path.join(__dirname,'../client/build/index.html'))
+  // });
   app.use("/api", apiRoute)
   app.use("/user", ensureAuthentification, userRoute)
   app.use("/posts", ensureAuthentification, postsRoute)
   
 app.post("/register", upload.single("file"), async (req, res, next) => {
-
-console.log('req.body register',req.body)
-console.log('req file register',req.file)
   try {
     const { email, password, username, avatar } = req.body
     const hashPassword = await bcrypt.hash(password, 10)
@@ -49,7 +46,6 @@ console.log('req file register',req.file)
 
     res.status(200).send(user)
   } catch (error) {
-    console.log({"error register":error.message})
     res.send({error : error.message})
     // next(error)
   }
@@ -69,7 +65,7 @@ app.post("/login", async (req, res) => {
     else {
       const userId = userEmail._id
       req.login(userId)
-      res.status(200).send(userEmail)
+      // res.status(200).send(userEmail)
     }
   }
 })
@@ -82,5 +78,6 @@ app.post("/logout", (req, res, next) => {
 app.get('/back', (req, res, next) => {
   res.json(' Voici la partie back-end de l\'application');
 })
+
 
 module.exports = app

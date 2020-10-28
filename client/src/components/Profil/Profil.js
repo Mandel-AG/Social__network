@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./profil.css";
 
 import { useForm } from "react-hook-form";
@@ -7,6 +8,7 @@ import axios from "axios";
 function Profil() {
   const [currentUser, setCurrentUser] = useState({});
   const { register, handleSubmit, watch, errors } = useForm();
+  let history = useHistory();
 
   useEffect(() => {
     axios
@@ -32,7 +34,7 @@ function Profil() {
       axios.post(`/user/updateUser/${currentUser.id}`, formData, {
         withCredentials: true,
       })
-      .then((res) => (res.status === 200 ? (window.location = "/home") : null))
+      .then((res) => (res.status === 200 ? (history.push("/home")) : null))
   };
 
 
