@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect( process.env.MONGODB_URI ||
-    "mongodb+srv://badel:badel@cluster0.f8esg.mongodb.net/fakeTwitter?retryWrites=true&w=majority",
+  .connect( process.env.MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -13,8 +12,7 @@ mongoose
 
 
 
-  module.exports = mongoose.createConnection( process.env.MONGODB_URI ||
-    "mongodb+srv://badel:badel@cluster0.f8esg.mongodb.net/fakeTwitter?retryWrites=true&w=majority",
+  module.exports = mongoose.createConnection( process.env.MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,

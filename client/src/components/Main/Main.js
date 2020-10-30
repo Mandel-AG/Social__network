@@ -64,7 +64,7 @@ const Main = (props) => {
                 onChange={() => onChange}
                 placeholder='Quoi de neuf ?'
                 name='content'
-                maxLength='40'
+                maxLength='120'
                 minLength='1'
                 ref={register({ required: "content required" })}
               />

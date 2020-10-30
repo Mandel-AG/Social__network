@@ -59,8 +59,10 @@ function Explorer() {
         <div className='AsideRight__header'>
           <h2>Les derniers posts</h2>
         </div>
+        <div className="AsideRight__content">
+          {eachPost}
+        </div>
 
-        {eachPost}
       </div>
     </div>
   );

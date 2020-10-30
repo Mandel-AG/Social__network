@@ -43,8 +43,6 @@ app.post("/register", upload.single("file"), async (req, res, next) => {
     })
     await user.save()
     req.login(user)
-
-    res.status(200).send(user)
   } catch (error) {
     res.send({error : error.message})
     // next(error)
