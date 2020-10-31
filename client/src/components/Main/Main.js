@@ -31,7 +31,7 @@ const Main = (props) => {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  },);
 
   const eachPost = posts.map((element) => (
     <div key={element._id} className='containerEachUser'>
@@ -57,7 +57,7 @@ const Main = (props) => {
       <div className='mainHeader'>          
 
           <div className='mainform'>
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
               <input
                 className='input--postTweet'
                 type='text'
@@ -73,6 +73,7 @@ const Main = (props) => {
 
           <div className='mainButton'>
             <button
+            type='submit'
               className='buttonTweeterMain'
               onClick={handleSubmit(onSubmit)}
             >

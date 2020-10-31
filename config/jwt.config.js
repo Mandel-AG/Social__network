@@ -36,10 +36,9 @@ const addJwtFeature = (req, res, next) => {
   req.isAuthenticated = () => !!req.user;
   req.logOut = () => res.clearCookie("token");
   req.login = async(userId) => {
-    const token = await createToken(userId);
+    const token = await createToken(userId._id);
     // res.cookie("token", token );
     res.send({'token':token})
-    // res.cookie("token", token,{ expires: new Date(Date.now() + 9000000), httpOnly: false } );
   };
   next();
 };

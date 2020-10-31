@@ -25,7 +25,7 @@ function AsideRight(props) {
 
   const deletePost = (postId) => {
     let confirm = window.confirm(
-      "êtes-vous sûr de vouloir supprimer ce Sweet ?"
+      "êtes-vous sûr de vouloir supprimer ce Post ?"
     );
     if (confirm) {
       axios.delete("/posts/deletePost/" + postId, {

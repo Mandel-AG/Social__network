@@ -5,6 +5,8 @@ import "./register.css"
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom"
 import axios from "axios"
+import {Home} from '../index';
+
 
 function Register() {
   const { register, handleSubmit, watch, errors } = useForm()
@@ -27,8 +29,9 @@ function Register() {
       )
       .then((req) => {
        if(req.status === 200 && !req.data.error){
-         setCookie('token',req.data.token)
          history.push('/home')
+         setCookie('token',req.data.token)
+         
        }
        if(req.data.error) setErrorMessage(req.data.error)
       })

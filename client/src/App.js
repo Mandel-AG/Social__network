@@ -6,11 +6,11 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/home" component={Home} ></Route>
-        <Route exact path="/login" component={Login} ></Route>
-        <Route exact path="/register" component={Register} ></Route>
-        <Route exact path="/not_available_yet" component={NotAvailable} ></Route>
-        <Route exact path="/" component={Explorer} ></Route>
+        <Route path="/home" component={Home} ></Route>
+        <Route  path="/login" component={Login} ></Route>
+        <Route  path="/register" component={Register} ></Route>
+        <Route  path="/not_available_yet" component={NotAvailable} ></Route>
+        <Route  path="/" component={Explorer} ></Route>
       </Switch>
     </Router>
 

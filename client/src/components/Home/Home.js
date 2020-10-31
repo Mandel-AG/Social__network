@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react"
 import "./home.css"
-import { AsideNavLeft, Main, AsideRight, Header, InfosBar, Explorer } from "../index"
+import { AsideNavLeft, Main, AsideRight, Header, InfosBar, Loading } from "../index"
 import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
-import axios from "axios"
+import axios from "axios";
 
 
 function Home() {
   const [currentUser, setCurrentUser] = useState({});
   const [decodedId, setDecodedId] = useState('');
   let history = useHistory();
- 
+
 
 useEffect(() => {
   axios
@@ -64,8 +64,9 @@ return (
     </div>
   
   :
-  <Explorer />
-
-)}
+  <div>
+    <Loading />
+  </div>
+  )}
 
 export default Home

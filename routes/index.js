@@ -29,6 +29,7 @@ const url =
   app.use("/user", ensureAuthentification, userRoute)
   app.use("/posts", ensureAuthentification, postsRoute)
   
+  
 app.post("/register", upload.single("file"), async (req, res, next) => {
   try {
     const { email, password, username, avatar } = req.body
