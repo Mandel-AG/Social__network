@@ -1,26 +1,45 @@
 .containerRegister {
-  width: 50%;
-  min-height: 64vh;
-  margin: 16vh auto;
-  border: 2px solid blueviolet;
-  text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.containerFormRegister {
+	width: 50%;
+	min-height: 50vh;
+	margin: 10vh auto;
+	text-align: center;
 }
 
 .containerRegister h1 {
-  margin: 1em 0;
+	margin: 1em 0;
+}
+
+.waveRegister {
+	position: fixed;
+	height: 142%;
+	right: -245vh;
+	bottom: 0;
+	z-index: -1;
+	padding: 1em;
+	transform: rotate(270deg);
+}
+
+.avatarLogin {
+	width: 6em;
 }
 
 .registerForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .registerForm__email,
 .registerForm__password,
 .registerForm__avatar {
-  width: 50%;
-  margin: 2em;
-  height: 3em;
+	width: 50%;
+	margin: 2em;
+	height: 3em;
 }

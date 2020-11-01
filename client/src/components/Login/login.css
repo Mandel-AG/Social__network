@@ -1,13 +1,32 @@
 .containerLogin {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.containerFormLogin {
 	width: 50%;
 	min-height: 50vh;
 	margin: 20vh auto;
-	border: 2px solid blueviolet;
 	text-align: center;
 }
 
 .containerLogin h1 {
 	margin: 1em 0;
+}
+
+.waveLogin {
+	position: fixed;
+	height: 100%;
+	left: -171vh;
+	bottom: 0;
+	z-index: -1;
+	padding: 1em;
+	transform: rotate(90deg);
+}
+
+.avatarLogin {
+	width: 6em;
 }
 
 .loginForm {

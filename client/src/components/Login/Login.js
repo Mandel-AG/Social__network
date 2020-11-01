@@ -31,34 +31,40 @@ function Login() {
 
   return (
     <div className='containerLogin'>
-      <h1>Login</h1>
-      <form className='loginForm' onSubmit={handleSubmit(onSubmit)}>
-        <label>Email</label>
-        <input
-          className='loginForm__email'
-          name='email'
-          type='email'
-          ref={register({ required: "Email required" })}
-        />
-        {errors.email && <span>{errors.email.message}</span>}
+      <img className="waveLogin" src={require('../utils/wave.svg')} alt='wave' />
 
-        <label>Mot de passe</label>
-        <input
-          className='loginForm__password'
-          type='password'
-          name='password'
-          ref={register({ required: "Password required" })}
-        />
-        {errors.password && <span>{errors.password.message}</span>}
+      <div className="containerFormLogin">
+        <img className="avatarLogin" src='https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg' alt='avatar' />
 
-        {errorMessage ? <span className="errorMessage"> {errorMessage} </span> : null}
+        <h1>Login</h1>
+        <form className='loginForm' onSubmit={handleSubmit(onSubmit)}>
+          <label>Email</label>
+          <input
+            className='loginForm__email'
+            name='email'
+            type='email'
+            ref={register({ required: "Email required" })}
+          />
+          {errors.email && <span>{errors.email.message}</span>}
 
-        <input type='submit' />
-      </form>
+          <label>Mot de passe</label>
+          <input
+            className='loginForm__password'
+            type='password'
+            name='password'
+            ref={register({ required: "Password required" })}
+          />
+          {errors.password && <span>{errors.password.message}</span>}
 
-      <span>
-        Pas encore de compte ? Cliquez <Link to='/register'>Ici !</Link>
-      </span>
+          {errorMessage ? <span className="errorMessage"> {errorMessage} </span> : null}
+
+          <input type='submit' />
+        </form>
+
+        <span>
+          Pas encore de compte ? Cliquez <Link to='/register'>Ici !</Link>
+        </span>
+      </div>
     </div>
   );
 }

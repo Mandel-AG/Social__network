@@ -40,48 +40,54 @@ function Register() {
     return (
       
       <div className='containerRegister'>
-      <h1>Register</h1>
-  
-      <span>{errorMessage}</span>
+        <img className="waveRegister" src={require('../utils/wave.svg')} alt='wave' />
+        <div className="containerFormRegister">
+        <img className="avatarLogin" src='https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg' alt='avatar' />
 
-      <form className='registerForm' onSubmit={handleSubmit(onSubmit)}>
-        <label>Avatar</label>
-        <input
-          className='registerForm__avatar'
-          type='file'
-          id='file'
-          name='file'
-          ref={register}
-        />
 
-        <label>username</label>
-        <input
-          className='registerForm__email'
-          name='username'
-          maxLength='12'
-          ref={register({ required: "username required" })}
-        />
+        <h1>Register</h1>
+    
+        <span>{errorMessage}</span>
 
-        <label>Email</label>
-        <input
-          className='registerForm__email'
-          name='email'
-          type='email'
-          ref={register({ required: "Email required" })}
-        />
+        <form className='registerForm' onSubmit={handleSubmit(onSubmit)}>
+          <label>Avatar</label>
+          <input
+            className='registerForm__avatar'
+            type='file'
+            id='file'
+            name='file'
+            ref={register}
+          />
 
-        <label>Mot de passe</label>
-        <input
-          className='registerForm__password'
-          type='password'
-          name='password'
-          ref={register({ required: "Password required" })}
-        />
+          <label>username</label>
+          <input
+            className='registerForm__email'
+            name='username'
+            maxLength='12'
+            ref={register({ required: "username required" })}
+          />
 
-        <input type='submit' />
-      </form>
+          <label>Email</label>
+          <input
+            className='registerForm__email'
+            name='email'
+            type='email'
+            ref={register({ required: "Email required" })}
+          />
 
-      <span>Deja un compte ? Cliquez <Link to='/login'> ici !</Link></span>
+          <label>Mot de passe</label>
+          <input
+            className='registerForm__password'
+            type='password'
+            name='password'
+            ref={register({ required: "Password required" })}
+          />
+
+          <input type='submit' />
+        </form>
+
+        <span>Deja un compte ? Cliquez <Link to='/login'> ici !</Link></span>
+        </div>
     </div>
   )
 }
