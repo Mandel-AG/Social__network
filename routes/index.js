@@ -32,7 +32,11 @@ const url =
   
 app.post("/register", upload.single("file"), async (req, res, next) => {
   try {
-    const { email, password, username, avatar } = req.body
+    const { email, password, username, avatar } = req.body;
+    const regex = /(?=.*[a-z])(?=.*[A-Z]{1})^.{6,15}$/;
+    if(!regex.test(password)){
+      throw new Error('Le mot de passe doit contenir au moins 1 majuscule et entre 6 et 15 caractères.')
+    }
     const hashPassword = await bcrypt.hash(password, 10)
     const user = new User({
       email: email.trim(),

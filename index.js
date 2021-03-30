@@ -10,7 +10,6 @@ const path = require("path"),
 require("./database/index");
 exports.app = app;
 
-
 require("./config/jwt.config");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
