@@ -36,7 +36,12 @@ const Main = (props) => {
   const eachPost = posts.map((element) => (
     <div key={element._id} className='containerEachUser'>
       <div className='eachUseravatar'>
-        <img src={`/api/avatar/${element.userId.avatar}`} alt='photo utilisateur' />
+        {
+          element.userId.avatar ?
+          <img src={`/api/avatar/${element.userId.avatar}`} alt='photo utilisateur' />
+          :
+          <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="default profile picture"/>
+        }
       </div>
 
       <div className='eachUserPseudo'>
