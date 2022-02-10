@@ -1,0 +1,31 @@
+.infosBar__container {
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.infos__nbOfUsers {
+}
+
+.infos__nbOfPosts {
+}
+
+.InfosBar__content {
+	/* min-width: 10em; */
+	height: 100%;
+	color: whitesmoke;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+}
+
+.InfosBar__content span {
+	color: white;
+}
+
+.InfosBar__content p {
+	color: rgb(66, 67, 80);
+	border-bottom: 3px solid white;
+}
