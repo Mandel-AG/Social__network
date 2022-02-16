@@ -12,7 +12,7 @@ const postSchema = new mongoose.Schema(
       ref: "User",
     },
     likes: {
-      type: Number,
+      type:{},
     },
     date: {
       type: {},

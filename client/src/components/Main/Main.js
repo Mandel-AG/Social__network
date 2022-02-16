@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import "./main.css";
 import axios from "axios";
+import { LikeButton } from "../index";
+
 
 const Main = (props) => {
   const [posts, setPosts] = useState([]);
@@ -51,7 +53,10 @@ const Main = (props) => {
       <div className='eachUserPost'>{element.content}</div>
 
       <div className='eachUserPostTool'>
+        <span>
         Posté le {element.date} à {element.hours} .
+        </span>
+        <LikeButton postId={element._id}/>
       </div>
 
     </div>

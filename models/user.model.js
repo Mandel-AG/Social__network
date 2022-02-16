@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema(
     date: {
       type: {},
     },
+    postLike:{
+      type:[]
+    }
+    ,
     index: Number,
   },
   {
