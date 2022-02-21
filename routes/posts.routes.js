@@ -6,7 +6,7 @@ const {
   deletePost,
 } = require("../controller/posts.controller.js");
 
-const { likePost }= require('../controller/like.controller')
+const { likePost, unlikePost }= require('../controller/like.controller')
 
 
 
@@ -27,7 +27,7 @@ app.post('/likepost/:id',likePost);
 
 
 // Unlike post
-app.post('/unlikepost/:id',likePost);
+app.post('/unlikepost/:id',unlikePost);
 
 
 

@@ -13,8 +13,7 @@ const GridFsStorage = require("multer-gridfs-storage")
 const Grid = require('gridfs-stream');
 const crypto = require("crypto")
 Grid.mongo = mongoose.mongo;
-const url =
-  "mongodb+srv://badel:badel@cluster0.f8esg.mongodb.net/fakeTwitter?retryWrites=true&w=majority"
+const url = process.env.MONGODB_URI;
 
   
   
