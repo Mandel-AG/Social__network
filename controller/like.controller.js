@@ -5,22 +5,36 @@ const mongoose = require('mongoose')
 
 
 exports.likePost = async (req,res,next) => {
+  const addPost  = async(user,post) => {
+    await User.findByIdAndUpdate(
+    {_id:user._id},
+    { $push: { postLike: post } },
+    { runValidators: true, useFindAndModify: false, new: true },
+    ).exec()
+    .then ( (response) => {res.send(response)})
+  }
   try{
      let user = req.user;
      const postId = req.params.id
      let post = await Post.findById(postId)
-     await User.findByIdAndUpdate(
-        {_id:user._id},
-        { $push: { postLike: post } },
-        { runValidators: true, useFindAndModify: false, new: true },
-      
-        )
-      res.status(200).send(user)
-    }
+     user.postLike.length > 0 ?
+      user.postLike.map(el => {
+        if(el._id == postId){
+          res.status(304).send('already liked')
+        }
+        else{
+          addPost(user,post)
+        }
+      })
+      :
+      addPost(user,post)
+  }
   catch(e){
     console.log(e)
   }
 }
+
+
 
 exports.unlikePost = async (req,res,next) => {
   try{
