@@ -25,7 +25,7 @@ useEffect(() => {
       updatedAt: response.data.updatedAt,
     }
     if (response.data) return setCurrentUser(user)
-  })
+  },[])
   
   let token;
   const cookie = document.cookie;

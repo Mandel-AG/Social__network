@@ -8,7 +8,7 @@ import axios from "axios";
 
 function LikeButton(props){
     
-    const [isPostLiked, setIsPostLiked ] = useState();
+    const [isPostLiked, setIsPostLiked ] = useState(false);
 
 
     useEffect(()=>{
@@ -17,30 +17,29 @@ function LikeButton(props){
         .then((response) => {
             let postList = response.data.postLike;
             postList.map(e => {
-                e._id === props.postId ? setIsPostLiked(true) : setIsPostLiked(false)
+                if(e._id == props.postId){
+                    setIsPostLiked(true)
+                }
             })
-            console.log('response',response)
+            
         })
+        .catch((err)=> console.log(err))
     },[])
 
     const likePost = async() => {
-       await axios.post(`/posts/unlikePost/${props.postId}`)
-       .then((res)=>{
-        // let test = postList.some((posts) => postId)
-        // console.log(test)
-        console.log(res)
-        console.log(isPostLiked)
-       })
-       .catch((e) => {
-           console.log(e)
-       })
+       await axios.post(`/posts/likePost/${props.postId}`)
+       .then(()=>{
+            setIsPostLiked(true)
+        })
+        .catch((e) => {
+            console.log(e)
+        })
     }
 
     const unlikePost = async() => {
-        await axios.post(`/posts/likePost/${props.postId}`)
-        .then((res)=>{
-         console.log(res)
-         console.log(isPostLiked)
+        await axios.post(`/posts/unlikePost/${props.postId}`)
+        .then(()=>{
+            setIsPostLiked(false)
         })
         .catch((e) => {
             console.log(e)
@@ -55,7 +54,7 @@ function LikeButton(props){
                     isPostLiked ?
                     <img onClick={unlikePost} src={liked} />
                     :
-                    <img onClick={unlikePost} src={like} />
+                    <img onClick={likePost} src={like} />
                 }
             </figure>
         </div>

@@ -33,7 +33,7 @@ const Main = (props) => {
 
   useEffect(() => {
     getPosts();
-  },);
+  },[]);
 
   const eachPost = posts.map((element) => (
     <div key={element._id} className='containerEachUser'>
