@@ -1,6 +1,7 @@
 const app = require("express").Router();
 const {
   getPosts,
+  getPost,
   createPost,
   updatePost,
   deletePost,
@@ -12,6 +13,9 @@ const { likePost, unlikePost }= require('../controller/like.controller')
 
 // Read posts
 app.get("/", getPosts);
+
+// Read One post
+app.get("/:id", getPost);
 
 // Create posts
 app.post("/newPost", createPost);

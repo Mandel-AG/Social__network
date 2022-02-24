@@ -20,8 +20,7 @@ function LikeButton(props){
                 if(e._id == props.postId){
                     setIsPostLiked(true)
                 }
-            })
-            
+            })     
         })
         .catch((err)=> console.log(err))
     },[])
@@ -52,7 +51,7 @@ function LikeButton(props){
             <figure>
                 {
                     isPostLiked ?
-                    <img onClick={unlikePost} src={liked} />
+                    <img onClick={unlikePost} src={liked} /> 
                     :
                     <img onClick={likePost} src={like} />
                 }

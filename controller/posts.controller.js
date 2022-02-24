@@ -12,6 +12,18 @@ exports.getPosts = async (req, res, next) => {
   }
 };
 
+
+exports.getPost = async (req, res, next) => {
+  try {
+    const posts = await Post.findOne({_id:req.params.id}).populate("userId");
+    res.json(posts);
+    // res.send(posts);
+  } catch (error) {
+    next()
+  }
+};
+
+
 exports.createPost = async (req, res, next) => {
   try {
     const content = req.body.content.trim();
