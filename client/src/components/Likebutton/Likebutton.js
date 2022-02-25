@@ -60,12 +60,21 @@ function LikeButton(props){
             <figure>
                 {
                     isPostLiked ?
-                    <img onClick={unlikePost} src={liked} /> 
+                  <div>
+                      <img onClick={unlikePost} src={liked} />   
+                      {
+                numberOfLikes  ?
+                <span> {numberOfLikes}</span>
+                :
+                null
+
+            }  
+                  </div>
                     :
                     <img onClick={likePost} src={like} />
                 }
             </figure>
-            <span> {numberOfLikes}</span>
+            
         </div>
     )
 }

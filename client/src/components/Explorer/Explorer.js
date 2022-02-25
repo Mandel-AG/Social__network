@@ -18,8 +18,13 @@ function Explorer() {
   const eachPost = posts.map((element) => (
     <div key={element._id} className='containerEachUser'>
       <div className='eachUseravatar'>
+      {element.userId.avatar ?
         <img src={`/api/avatar/${element.userId.avatar}`} alt='utilisateur' />
+        :
+        <img src={"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png"} alt='utilisateur' />
+      }
       </div>
+      
 
       <div className='eachUserPseudo'>{element.userId.username}</div>
 
