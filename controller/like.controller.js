@@ -81,7 +81,6 @@ exports.likePost = async (req,res,next) => {
       addPost(user,post)
       res.send(user)
       return
-
   }
   catch(e){
     console.log(e)
@@ -92,11 +91,14 @@ exports.likePost = async (req,res,next) => {
 exports.unlikePost = async (req,res,next) => {
   try{
      let user = req.user;
+     let userId = req.user._id;
      const postId = req.params.id
-     await Post.findByIdAndUpdate(
+     await Post.findOneAndUpdate(
       {_id:postId},
-      {$pull:{likes:postId}},
-      { runValidators: true, useFindAndModify: false, new: true }
+      {$pull:{ likes:{ _id: mongoose.Types.ObjectId(userId) }}},
+      { runValidators: true, 
+        useFindAndModify: false, 
+        new: true },
     ).exec()
     
      await User.findOneAndUpdate(

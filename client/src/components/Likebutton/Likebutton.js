@@ -9,6 +9,7 @@ import axios from "axios";
 function LikeButton(props){
     
     const [isPostLiked, setIsPostLiked ] = useState(false);
+    let [numberOfLikes, setNumberOfLikes ] = useState(0);
 
 
     useEffect(()=>{
@@ -22,6 +23,10 @@ function LikeButton(props){
                 }
             })     
         })
+        axios.get(`/posts/${props.postId}`)
+         .then((res)=>{
+            setNumberOfLikes(res.data.likes.length)
+         })
         .catch((err)=> console.log(err))
     },[])
 
@@ -29,6 +34,7 @@ function LikeButton(props){
        await axios.post(`/posts/likePost/${props.postId}`)
        .then(()=>{
             setIsPostLiked(true)
+            setNumberOfLikes(numberOfLikes+1)
         })
         .catch((e) => {
             console.log(e)
@@ -39,11 +45,14 @@ function LikeButton(props){
         await axios.post(`/posts/unlikePost/${props.postId}`)
         .then(()=>{
             setIsPostLiked(false)
+            setNumberOfLikes(numberOfLikes-1)
+
         })
         .catch((e) => {
             console.log(e)
         })
      }
+
 
 
     return(
@@ -56,6 +65,7 @@ function LikeButton(props){
                     <img onClick={likePost} src={like} />
                 }
             </figure>
+            <span> {numberOfLikes}</span>
         </div>
     )
 }
