@@ -95,7 +95,7 @@ exports.unlikePost = async (req,res,next) => {
      const postId = req.params.id
      await Post.findOneAndUpdate(
       {_id:postId},
-      {$pull:{ likes:{ _id: mongoose.Types.ObjectId(userId) }}},
+      {$pull:{ likes:{  $in:[mongoose.Types.ObjectId(userId) ]}}},
       { runValidators: true, 
         useFindAndModify: false, 
         new: true },
