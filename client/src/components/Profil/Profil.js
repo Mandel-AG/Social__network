@@ -60,7 +60,7 @@ function Profil() {
 
         <div className='profil__form'>
           <form className="form__avatar" onSubmit={handleSubmit(changeAvatar)}>
-            <label className="profil__label" for="file_input">
+            <label className="profil__label" htmlFor="file_input">
               <img alt="change profile picture" src={changePictureIcon} />
             </label>
             <input

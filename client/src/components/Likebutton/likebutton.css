@@ -1,3 +1,10 @@
 .containerLikebutton img {
 	width: 1rem;
 }
+
+.likeButton__withCount {
+	display: flex;
+	justify-content: space-around;
+	width: 2em;
+	font-size: 1rem;
+}
