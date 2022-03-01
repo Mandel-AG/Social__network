@@ -13,7 +13,6 @@ function AsideNavLeft() {
       .then((response) => {
         if (response.status === 200) {
           history.push("/login");
-          // document.cookie = "token" + "=" + "";
           cookie.remove('token')
 
         }

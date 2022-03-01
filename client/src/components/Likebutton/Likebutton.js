@@ -18,9 +18,10 @@ function LikeButton(props){
         .then((response) => {
             let postList = response.data.postLike;
             postList.map(e => {
-                if(e._id == props.postId){
+                if(e._id === props.postId){
                     setIsPostLiked(true)
                 }
+                return null;
             })     
         })
         axios.get(`/posts/${props.postId}`)
@@ -28,7 +29,7 @@ function LikeButton(props){
             setNumberOfLikes(res.data.likes.length)
          })
         .catch((err)=> console.log(err))
-    },[])
+    },[props.postId])
 
     const likePost = async() => {
        await axios.post(`/posts/likePost/${props.postId}`)
@@ -61,7 +62,7 @@ function LikeButton(props){
                 {
                     isPostLiked ?
                         <div className="likeButton__withCount">
-                            <img onClick={unlikePost} src={liked} />   
+                            <img onClick={unlikePost} src={liked} alt='liked button'/>   
                                 {numberOfLikes  ?
                                     <span> {numberOfLikes}</span>
                                     :
@@ -70,7 +71,7 @@ function LikeButton(props){
                         </div>
                     :
                     <div className="likeButton__withCount">
-                        <img onClick={likePost} src={like} />    
+                        <img onClick={likePost} src={like} alt='like button' />    
                         {numberOfLikes  ?
                             <span> {numberOfLikes}</span>
                             :

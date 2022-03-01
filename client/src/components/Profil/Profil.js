@@ -20,7 +20,7 @@ function Profil() {
           email: response.data.email,
           username: response.data.username,
           avatar: response.data.avatar,
-          createdAt: response.data.createdAt,
+          createdAt: response.data.createdAt.replace(/T(.*)/,""),
           updatedAt: response.data.updatedAt,
         };
         if (response.data) return setCurrentUser(user);
@@ -39,9 +39,8 @@ function Profil() {
   };
 
 
-
   let background = {
-    backgroundImage : `url("/api/avatar/${currentUser.avatar}")`
+    backgroundImage :currentUser.avatar ?  `url("/api/avatar/${currentUser.avatar}")`:"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" 
   }
   
   
@@ -51,7 +50,6 @@ function Profil() {
     
       {/* <div className='profil__avatar'>
       </div> */}
-
       <div className='profil__infos'>
 
         <span className="infos__email"> {currentUser.email} </span>{" "}
@@ -61,7 +59,7 @@ function Profil() {
         <div className='profil__form'>
           <form className="form__avatar" onSubmit={handleSubmit(changeAvatar)}>
             <label className="profil__label" htmlFor="file_input">
-              <img alt="change profile picture" src={changePictureIcon} />
+              <img alt="change profile avatar" src={changePictureIcon} />
             </label>
             <input
               className='registerForm__avatar'

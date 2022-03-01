@@ -1,17 +1,14 @@
 import React, {useState} from "react"
 import { useForm } from "react-hook-form"
-import { useCookies } from "react-cookie";
 import "./register.css"
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom"
 import axios from "axios"
-import {Home} from '../index';
 
 
 function Register() {
   const { register, handleSubmit, watch, errors } = useForm()
   const [errorMessage, setErrorMessage] = useState('');
-  const [cookies, setCookie] = useCookies([""]);
   let history = useHistory();
 
   const onSubmit = (data) => {
@@ -30,8 +27,6 @@ function Register() {
       .then((req) => {
        if(req.status === 200 && !req.data.error){
          history.push('/home')
-         setCookie('token',req.data.token)
-         
        }
        if(req.data.error) setErrorMessage(req.data.error)
       })

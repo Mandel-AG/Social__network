@@ -7,7 +7,6 @@ import { LikeButton } from "../index";
 
 const Main = (props) => {
   const [posts, setPosts] = useState([]);
-  const [value, setValue] = useState();
   const { register, handleSubmit, watch, errors } = useForm();
 
   const getPosts = async () => {
@@ -27,10 +26,6 @@ const Main = (props) => {
     getPosts();
   };
 
-  const onChange = (event) => {
-    setValue(event.target.value);
-  };
-
   useEffect(() => {
     getPosts();
   },[]);
@@ -40,9 +35,9 @@ const Main = (props) => {
       <div className='eachUseravatar'>
         {
           element.userId.avatar ?
-          <img src={`/api/avatar/${element.userId.avatar}`} alt='photo utilisateur' />
-          :
-          <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="default profile picture"/>
+            <img src={`/api/avatar/${element.userId.avatar}`} alt='avatar utilisateur' />
+            :
+            <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="default profile avatar"/>
         }
       </div>
 
@@ -71,7 +66,6 @@ const Main = (props) => {
               <input
                 className='input--postTweet'
                 type='text'
-                onChange={() => onChange}
                 placeholder='Quoi de neuf ?'
                 name='content'
                 maxLength='120'

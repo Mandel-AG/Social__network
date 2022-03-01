@@ -5,7 +5,6 @@ import jwt_decode from "jwt-decode";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-
 function Home() {
   const [currentUser, setCurrentUser] = useState({});
   const [decodedId, setDecodedId] = useState('');

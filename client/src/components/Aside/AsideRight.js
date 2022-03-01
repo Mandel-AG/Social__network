@@ -4,7 +4,6 @@ import axios from "axios";
 
 function AsideRight(props) {
   const [ownPosts, setOwnPosts] = useState([]);
-  const [currentUser, setCurrentUser] = useState({});
 
   const getMyPosts = async () => {
     await axios
@@ -17,11 +16,9 @@ function AsideRight(props) {
   };
 
   useEffect(() => {
-    if (props.currentUser) {
-      setCurrentUser(props.currentUser);
-    }
+
     getMyPosts();
-  }, []);
+  }, [props.currentUser]);
 
   const deletePost = (postId) => {
     let confirm = window.confirm(

@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import { useForm } from "react-hook-form";
-import { useCookies } from "react-cookie";
 import "./login.css";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -10,7 +9,6 @@ import axios from "axios";
 function Login() {
   const { register, handleSubmit, watch, errors } = useForm();
   const [errorMessage, setErrorMessage] = useState('');
-  const [cookies, setCookie] = useCookies([""]);
   let history = useHistory();
 
   const onSubmit = (data) => {
@@ -22,7 +20,6 @@ function Login() {
       )
       .then((req) => {
         if(req.status === 200 && !req.data.error){
-          setCookie('token',req.data.token)
           history.push('/home')
         }
         if(req.data.error) setErrorMessage(req.data.error)
@@ -52,6 +49,7 @@ function Login() {
             className='loginForm__password'
             type='password'
             name='password'
+            autoComplete="on"
             ref={register({ required: "Password required" })}
           />
           {errors.password && <span>{errors.password.message}</span>}
