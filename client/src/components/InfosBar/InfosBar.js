@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react"
 import "./infosBar.css"
 import axios from "axios"
 
-function InfosBar() {
+function InfosBar(props) {
+   
+  // const [currentUser, setCurrentUser] = useState({});
   const [nbOfUsers, setNbOfUsers] = useState('');
   const [nbOfPosts, setNbOfPosts] = useState('');
 
@@ -24,8 +26,8 @@ function InfosBar() {
   return (
     <div className='infosBar__container'>
       <div className="infosBar__nbOfUsers InfosBar__content">
-        <span> { nbOfUsers } </span>
-        <p>Utilisateurs</p>
+        <span> { props.currentUser.postLike.length } </span>
+        <p>Posts Likés</p>
       </div>
 
       <div className="infosBar__nbOfPosts InfosBar__content">

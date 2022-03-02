@@ -20,6 +20,7 @@ useEffect(() => {
       email: response.data.email,
       username: response.data.username,
       avatar: response.data.avatar,
+      postLike: response.data.postLike,
       createtAt: response.data.createdAt,
       updatedAt: response.data.updatedAt,
     }
@@ -46,7 +47,7 @@ return (
       </div>
 
       <div className="homeInfosBar">
-        <InfosBar />
+        <InfosBar currentUser={currentUser} />
       </div>
       
       <div className='containerAsideLeft'>

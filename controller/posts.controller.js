@@ -1,5 +1,7 @@
 const Post = require("../models/post.model");
-const User = require("../models/user.model.js")
+const User = require("../models/user.model.js");
+const mongoose = require("mongoose");
+
 
 
 exports.getPosts = async (req, res, next) => {
@@ -59,7 +61,15 @@ exports.updatePost = async (req, res) => {
 exports.deletePost = async (req, res, next) => {
   try {
     const postId = req.params.id;
+    const userId = req.params.userId;
     await Post.findByIdAndDelete(postId);
+    await User.updateMany({},
+      { $pull: { postLike: {_id: mongoose.Types.ObjectId(postId)} } },
+      { runValidators: true, 
+        useFindAndModify: false, 
+        new:true }
+  ).exec()
+
     res.status(200).json("le post est effacé");
   } catch (error) {
     next(error);

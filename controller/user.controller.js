@@ -19,7 +19,6 @@ exports.createUser = async (req, res, next) => {
     if(!regex.test(password)){
       throw new Error('Le mot de passe doit contenir au moins 1 majuscule et entre 6 et 15 caractères.')
     }
-    console.log(regex.test(password))
     const hashPassword = await bcrypt.hash(password, 10)
     const user = new User({
       email: email.trim(),

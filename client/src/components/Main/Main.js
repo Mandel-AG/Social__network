@@ -13,22 +13,26 @@ const Main = (props) => {
     const posts = await axios.get("/posts", {
       withCredentials: true,
     });
-    setPosts(posts.data);
+
+    // setPosts(pre =>[...pre,...posts.data]);
+    await setPosts(posts.data);
+    return;
   };
 
-  const onSubmit = (data) => {
-    axios.post(
+  const onSubmit = async (data) => {
+    await axios.post(
       "/posts/newPost",
       { ...data },
       { withCredentials: true }
     );
+    getPosts()
     document.querySelector(".input--postTweet").value = "";
-    getPosts();
+    return
   };
 
   useEffect(() => {
-    getPosts();
-  },[]);
+    getPosts()
+  },[posts.length]);
 
   const eachPost = posts.map((element) => (
     <div key={element._id} className='containerEachUser'>
@@ -59,8 +63,7 @@ const Main = (props) => {
 
   return (
     <div className='containterMain'>
-      <div className='mainHeader'>          
-
+      <div className='mainHeader'>      
           <div className='mainform'>
             <form onSubmit={(e) => e.preventDefault()}>
               <input

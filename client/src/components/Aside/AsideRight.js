@@ -6,30 +6,27 @@ function AsideRight(props) {
   const [ownPosts, setOwnPosts] = useState([]);
 
   const getMyPosts = async () => {
-    await axios
-      .get("/posts", { withCredentials: true })
-      .then((posts) => posts.data)
-      .then((element) => {
-        const posts = element.map((post) => post);
-        setOwnPosts(posts);
-      });
+    const posts1 = await axios.get("/posts", { withCredentials: true })
+
+    await setOwnPosts(posts1.data);
+    return
+      
   };
 
   useEffect(() => {
-
     getMyPosts();
-  }, [props.currentUser]);
+  }, [ownPosts.length]);
 
-  const deletePost = (postId) => {
-    let confirm = window.confirm(
+  const deletePost = async(postId) => {
+    let confirm = await window.confirm(
       "êtes-vous sûr de vouloir supprimer ce Post ?"
     );
     if (confirm) {
-      axios.delete("/posts/deletePost/" + postId, {
+      await axios.delete("/posts/deletePost/" + postId, {
         withCredentials: true,
       });
     }
-    getMyPosts();
+    await getMyPosts();
   };
 
   const myPost = ownPosts.filter(
