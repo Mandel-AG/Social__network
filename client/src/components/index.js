@@ -11,3 +11,4 @@ export {default as Header} from './Header/Header' ;
 export {default as InfosBar} from './InfosBar/InfosBar' ;
 export {default as Loading} from './Loading/Loading' ;
 export {default as LikeButton} from './Likebutton/Likebutton' ;
+export {default as Spline} from './Spline/Spline' ;

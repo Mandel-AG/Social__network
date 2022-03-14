@@ -31,11 +31,8 @@ function Login() {
 
   return (
     <div className='containerLogin'>
-      <img className="waveLogin" src={require('../utils/wave.svg')} alt='wave' />
 
       <div className="containerFormLogin">
-        <img className="avatarLogin" src='https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg' alt='avatar' />
-
         <h1>Login</h1>
         <form className='loginForm' onSubmit={handleSubmit(onSubmit)}>
           <label>Email</label>

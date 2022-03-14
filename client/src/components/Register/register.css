@@ -2,12 +2,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex: 3 1;
 }
 
 .containerFormRegister {
 	width: 50%;
 	min-height: 50vh;
-	margin: 10vh auto;
+	margin: 20vh auto;
 	text-align: center;
 }
 
@@ -15,14 +16,32 @@
 	margin: 1em 0;
 }
 
-.waveRegister {
-	position: fixed;
-	height: 142%;
-	right: -245vh;
-	bottom: 0;
-	z-index: -1;
-	padding: 1em;
-	transform: rotate(270deg);
+.containerRegister input {
+	border-radius: 0.8em;
+}
+
+.containerFormRegister input {
+	border: none;
+	background-color: #e3e3e3;
+}
+
+.containerRegister input[type="submit"] {
+	background-color: burlywood;
+	border: none;
+	box-shadow: 1px 1px 8px;
+	height: 2em;
+	width: 12em;
+	border-radius: 0.3em;
+}
+
+.containerRegister label {
+	font-weight: bold;
+}
+
+.containerRegister span {
+	position: absolute;
+	top: 2em;
+	right: 3em;
 }
 
 .avatarLogin {
@@ -42,4 +61,10 @@
 	width: 50%;
 	margin: 2em;
 	height: 3em;
+}
+
+.errorMessage {
+	color: red;
+	font-size: 2em;
+	margin: 0.5em;
 }

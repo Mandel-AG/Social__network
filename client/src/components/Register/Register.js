@@ -35,9 +35,8 @@ function Register() {
     return (
       
       <div className='containerRegister'>
-        <img className="waveRegister" src={require('../utils/wave.svg')} alt='wave' />
         <div className="containerFormRegister">
-        <img className="avatarLogin" src='https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg' alt='avatar' />
+        <img className="avatarLogin" src='https://cdn-icons.flaticon.com/png/512/666/premium/666201.png?token=exp=1647226108~hmac=dded4b8f08b855af7a6820bb68d4bb8c' alt='avatar' />
 
 
         <h1>Register</h1>
@@ -81,7 +80,7 @@ function Register() {
           <input type='submit' />
         </form>
 
-        <span>Deja un compte ? Cliquez <Link to='/login'> ici !</Link></span>
+        <span>Déjà un compte ? Cliquez <Link to='/login'> ici !</Link></span>
         </div>
     </div>
   )

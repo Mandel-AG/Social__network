@@ -15,16 +15,6 @@
 	margin: 1em 0;
 }
 
-.waveLogin {
-	position: fixed;
-	height: 100%;
-	left: -171vh;
-	bottom: 0;
-	z-index: -1;
-	padding: 1em;
-	transform: rotate(90deg);
-}
-
 .avatarLogin {
 	width: 6em;
 }
@@ -47,4 +37,32 @@
 	color: red;
 	font-size: 2em;
 	margin: 0.5em;
+}
+
+.containerLogin input {
+	border-radius: 0.8em;
+}
+
+.containerFormLogin input {
+	border: none;
+	background-color: #e3e3e3;
+}
+
+.containerLogin input[type="submit"] {
+	background-color: burlywood;
+	border: none;
+	box-shadow: 1px 1px 8px;
+	height: 2em;
+	width: 12em;
+	border-radius: 0.3em;
+}
+
+.containerLogin label {
+	font-weight: bold;
+}
+
+.containerLogin span {
+	position: absolute;
+	top: 2em;
+	right: 3em;
 }
