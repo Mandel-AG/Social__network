@@ -1,9 +1,8 @@
-import React,{useState} from "react";
+import React,{useState, useRef} from "react";
 import { useForm } from "react-hook-form";
 import { useCookies } from "react-cookie";
 import "./login.css";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 
@@ -12,6 +11,8 @@ function Login() {
   const [errorMessage, setErrorMessage] = useState('');
   const [cookies, setCookie] = useCookies([""]);
   let history = useHistory();
+
+
 
   const onSubmit = (data) => {
     axios
@@ -29,9 +30,9 @@ function Login() {
       })
   };
 
-  return (
-    <div className='containerLogin'>
 
+  return (
+    <div className='containerLogin' >
       <div className="containerFormLogin">
         <h1>Login</h1>
         <form className='loginForm' onSubmit={handleSubmit(onSubmit)}>
@@ -58,10 +59,7 @@ function Login() {
 
           <input type='submit' />
         </form>
-
-        <span>
-          Pas encore de compte ? Cliquez <Link to='/register'>Ici !</Link>
-        </span>
+        <button >TEST</button>
       </div>
     </div>
   );

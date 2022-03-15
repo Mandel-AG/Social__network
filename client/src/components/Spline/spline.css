@@ -1,6 +1,7 @@
 .container3DLogin {
 	display: flex;
 	height: 100vh;
+	position: relative;
 }
 
 .spline-watermark {
@@ -25,6 +26,31 @@
 
 .container3DLogin img {
 	height: 100%;
+}
+
+.spline__login_register {
+	flex: 1;
+}
+
+.spline__span-login_register {
+	position: absolute;
+	top: 2em;
+	right: 2em;
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(-300px);
+		opacity: 0%;
+		display: none;
+	}
+}
+
+.slideIn {
+	animation: slideIn 300ms linear;
 }
 
 @media only screen and (max-width: 1100px) {

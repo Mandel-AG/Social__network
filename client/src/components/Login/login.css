@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100%;
 }
 
 .containerFormLogin {
@@ -65,4 +66,19 @@
 	position: absolute;
 	top: 2em;
 	right: 3em;
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(-300px);
+		opacity: 0%;
+		display: none;
+	}
+}
+
+.slideIn {
+	animation: slideIn 300ms linear;
 }

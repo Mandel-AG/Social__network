@@ -2,7 +2,6 @@ import React, {useState} from "react"
 import { useForm } from "react-hook-form"
 import "./register.css"
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom"
 import axios from "axios"
 
 
@@ -79,8 +78,6 @@ function Register() {
 
           <input type='submit' />
         </form>
-
-        <span>Déjà un compte ? Cliquez <Link to='/login'> ici !</Link></span>
         </div>
     </div>
   )
