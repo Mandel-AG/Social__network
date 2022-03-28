@@ -23,12 +23,13 @@
 .containerFormRegister input {
 	border: none;
 	background-color: #e3e3e3;
+	box-shadow: 1px 1px 15px -11px black;
 }
 
 .containerRegister input[type="submit"] {
 	background-color: burlywood;
 	border: none;
-	box-shadow: 1px 1px 8px;
+	box-shadow: 1px 1px 5px -1px black;
 	height: 2em;
 	width: 12em;
 	border-radius: 0.3em;
