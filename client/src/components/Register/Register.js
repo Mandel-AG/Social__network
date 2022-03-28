@@ -44,7 +44,7 @@ function Register() {
         <div className="containerFormRegister">
 
         <h1>Register</h1>
-    {console.log(watch('file','file'))}
+    {console.log(watch('file','FileList[0]'))}
         <span>{errorMessage}</span>
 
         <form className='registerForm' onSubmit={handleSubmit(onSubmit)}>
@@ -52,8 +52,8 @@ function Register() {
             {
               avatar ?
             <figure>
-              <img id='registerAvatar' src={watch("file")} alt="avatar" />
-              {/* <img id='registerAvatar' src={avatarIcon} alt="avatar" /> */}
+              <img id='registerAvatar' src={avatarIcon} alt="avatar" />
+              <figcaption>image uploaded !</figcaption>
             </figure>
                 :
                 null

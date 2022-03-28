@@ -56,11 +56,14 @@
 }
 
 .registerForm__email,
-.registerForm__password,
-.registerForm__avatar {
-	width: 50%;
+.registerForm__password {
+	width: 20em;
 	margin: 2em;
 	height: 3em;
+}
+
+.registerForm__avatar {
+	margin: 2em;
 }
 
 .registerForm__avatar input {
