@@ -63,6 +63,19 @@
 	height: 3em;
 }
 
+.registerForm__avatar input {
+	display: none;
+}
+
+.registerForm__avatar label {
+	text-decoration: underline;
+	color: #4343db;
+}
+
+#registerAvatar {
+	height: 2em;
+}
+
 .errorMessage {
 	color: red;
 	font-size: 2em;

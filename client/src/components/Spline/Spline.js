@@ -20,40 +20,51 @@ useEffect(() => {
 },[window.location.pathname])
 
 const loginContainer = useRef(null);
+const registerContainer = useRef(null);
+const container = useRef(null);
 
 
+const test = async (e) => {
+ 
+  if(component === 'Login'){
+    // container.current.classList.add('slideIn');
 
-const test = () => {
+  }
+  else if (component === 'Register'){
+    // container.current.classList.add('slideIn');
+
+  }
+    
+  // console.log("test", e)
   // {console.log(loginContainer.current )}
-  loginContainer.current.className ='slideIn';
 }
 
-  return (
-    <div className="container3DLogin">
+return (
+  <div className="container3DLogin">
       {/* <div className='container3D'>
         <iframe src='https://my.spline.design/untitled-07911811b9cd8329c9fede183be4cc36/' frameborder='0' width='100%' height='100%'></iframe>
       </div> */}
       <figure className="spline--image">
         <img src="https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="loginpage" />
       </figure>
-
-      {console.log(window.location.href)}
-
+      <div className="spline__login_register" ref={container}>
       {
         component === "Login" ?
         <div className="spline__login_register" ref={loginContainer}>
-          <span className="spline__span-login_register" onClick={test} >
+          <span className="spline__span-login_register" onClick={test('register')} >
             Pas encore de compte ? Cliquez <Link to='/register'>Ici !</Link>
           </span>
           <Login />
         </div>
-        : component === "Register" ?
-        <div className="spline__login_register" ref={loginContainer}>
-          <span className="spline__span-login_register" onclick={test} >Déjà un compte ? Cliquez <Link to='/login'> ici !</Link></span>
+        :
+        <div className="spline__login_register" ref={registerContainer}>
+          <span className="spline__span-login_register" onClick={test('login')} >Déjà un compte ? Cliquez <Link to='/login'> ici !</Link></span>
           <Register /> 
         </div>
-        : null
+      
       }
+
+      </div>
     </div>
   );
 }
