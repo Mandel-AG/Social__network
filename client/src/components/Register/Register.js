@@ -44,7 +44,6 @@ function Register() {
         <div className="containerFormRegister">
 
         <h1>Register</h1>
-    {console.log(watch('file','FileList[0]'))}
         <span>{errorMessage}</span>
 
         <form className='registerForm' onSubmit={handleSubmit(onSubmit)}>

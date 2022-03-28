@@ -7,13 +7,13 @@
 
 .containerFormLogin {
 	width: 50%;
-	min-height: 50vh;
+	/* min-height: 50vh; */
 	margin: 20vh auto;
 	text-align: center;
 }
 
 .containerLogin h1 {
-	margin: 1em 0;
+	margin: 1.5em 0;
 }
 
 .avatarLogin {
@@ -29,7 +29,7 @@
 
 .loginForm__email,
 .loginForm__password {
-	width: 50%;
+	width: 20em;
 	margin: 2em;
 	height: 3em;
 }
